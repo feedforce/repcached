@@ -1,0 +1,2 @@
+sudo yum install -y libevent-devel
+rpmbuild -ba /home/builder/rpm/repcached.spec
