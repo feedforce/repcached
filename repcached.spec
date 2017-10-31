@@ -89,6 +89,9 @@ exit 0
 
 
 %changelog
+* Tue Oct 31 2017 OZAWA Sakuro <ozawa@feedforce.jp> - 1.2.8-2.2.1
+- Port to CentOS7
+
 * Wed Jul  4 2007 Paul Lindner <lindner@inuus.com> - 1.2.2-5
 - Use /var/run/memcached/ directory to hold PID file
 
