@@ -1,12 +1,12 @@
-Name:           memcached
-Version:        1.2.8
+Name:           repcached
+Version:        2.2.1
 Release:        1%{?dist}
-Summary:        High Performance, Distributed Memory Object Cache
+Summary:        High Performance, Distributed Memory Object Cache with replication
 
 Group:          System Environment/Daemons
 License:        BSD
-URL:            http://www.danga.com/memcached/
-Source0:        http://www.danga.com/memcached/dist/%{name}-%{version}.tar.gz
+URL:            http://repcached.lab.klab.org/
+Source0:        memcached-1.2.8-repcached-2.2.1.tar.gz
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 BuildRequires:  libevent-devel
@@ -22,13 +22,13 @@ system, generic in nature, but intended for use in speeding up dynamic
 web applications by alleviating database load.
 
 %prep
-%setup -q
+%setup -q -n memcached-1.2.8-%{name}-%{version}
 
 
 %build
 %configure --enable-threads
 
-make %{?_smp_mflags}
+make %{?_smp_mflags} CFLAGS="-D__need_IOV_MAX ${CFLAGS}"
 
 %check
 make test
