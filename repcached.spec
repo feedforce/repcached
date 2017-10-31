@@ -10,7 +10,6 @@ Source0:        memcached-1.2.8-repcached-2.2.1.tar.gz
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
 BuildRequires:  libevent-devel
-BuildRequires:  perl(Test::More)
 Requires: initscripts
 Requires(post): /sbin/chkconfig
 Requires(preun): /sbin/chkconfig, /sbin/service
@@ -29,9 +28,6 @@ web applications by alleviating database load.
 %configure --enable-threads
 
 make %{?_smp_mflags} CFLAGS="-D__need_IOV_MAX ${CFLAGS}"
-
-%check
-make test
 
 %install
 rm -rf %{buildroot}
