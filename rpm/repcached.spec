@@ -1,6 +1,6 @@
 Name:           repcached
 Version:        2.2.1
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        High Performance, Distributed Memory Object Cache with replication
 
 Group:          System Environment/Daemons
@@ -44,7 +44,7 @@ install -Dp -m0755 scripts/memcached.sysv %{buildroot}%{_initrddir}/memcached
 
 # Default configs
 mkdir -p %{buildroot}/%{_sysconfdir}/sysconfig
-cat <<EOF >%{buildroot}/%{_sysconfdir}/sysconfig/%{name}
+cat <<EOF >%{buildroot}/%{_sysconfdir}/sysconfig/memcached
 PORT="11211"
 USER="nobody"
 MAXCONN="1024"
