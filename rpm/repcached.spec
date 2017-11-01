@@ -79,7 +79,7 @@ exit 0
 %files
 %defattr(-,root,root,-)
 %doc AUTHORS ChangeLog COPYING NEWS README TODO doc/CONTRIBUTORS doc/*.txt
-%config(noreplace) %{_sysconfdir}/sysconfig/%{name}
+%config(noreplace) %{_sysconfdir}/sysconfig/memcached
 
 %dir %attr(750,nobody,nobody) %{_localstatedir}/run/memcached
 %{_bindir}/memcached-tool
