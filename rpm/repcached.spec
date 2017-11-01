@@ -1,6 +1,6 @@
 Name:           repcached
 Version:        2.2.1
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        High Performance, Distributed Memory Object Cache with replication
 
 Group:          System Environment/Daemons
@@ -25,9 +25,9 @@ web applications by alleviating database load.
 
 
 %build
-%configure --enable-threads
+%configure --enable-replication
 
-make %{?_smp_mflags} CFLAGS="-D__need_IOV_MAX ${CFLAGS}"
+make %{?_smp_mflags} CFLAGS="-D__need_IOV_MAX -DREPLECATION ${CFLAGS}"
 
 %install
 rm -rf %{buildroot}
